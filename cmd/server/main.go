@@ -4,15 +4,19 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+
+	"github.com/BlackDadd77/3V30OStudios/internal/config"
 )
 
 func main() {
+	cfg := config.Load()
+
 	http.HandleFunc("/", handleRoot)
 	http.HandleFunc("/health", handleHealth)
 
-	port := ":8080"
-	fmt.Printf("Starting 3V30OStudios server on port %s\n", port)
-	log.Fatal(http.ListenAndServe(port, nil))
+	addr := fmt.Sprintf("%s:%s", cfg.Host, cfg.Port)
+	fmt.Printf("Starting 3V30OStudios server on %s\n", addr)
+	log.Fatal(http.ListenAndServe(addr, nil))
 }
 
 func handleRoot(w http.ResponseWriter, r *http.Request) {
