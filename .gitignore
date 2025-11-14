@@ -43,3 +43,15 @@ __pycache__/
 
 # Deployment artifacts (keep these for reference but sensitive info should be excluded)
 # deployments/*_latest.json excluded from repo but timestamped versions kept for audit trail
+
+# Go build artifacts
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+go.sum
+/bin/
+/vendor/
