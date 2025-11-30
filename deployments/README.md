@@ -11,17 +11,17 @@ This directory contains deployment manifests for all EVOLVERSE / MEGAZION contra
 
 ```json
 {
-  "network": "polygon",
-  "chainId": 137,
-  "deployedAt": "2025-11-02T13:10:00.000Z",
-  "deployer": "0x...",
-  "contracts": {
-    "BLEULION_CASCADE": {
-      "address": "0x...",
-      "deploymentTx": "0x...",
-      "blockNumber": 12345678
-    }
-  }
+"network": "polygon",
+"chainId": 137,
+"deployedAt": "2025-11-02T13:10:00.000Z",
+"deployer": "0x...",
+"contracts": {
+"BLEULION_CASCADE": {
+"address": "0x...",
+"deploymentTx": "0x...",
+"blockNumber": 12345678
+}
+}
 }
 ```
 
@@ -36,10 +36,10 @@ import * as fs from "fs";
 import * as path from "path";
 
 const manifest = JSON.parse(
-  fs.readFileSync(
-    path.join(__dirname, "deployments", "polygon_latest.json"),
-    "utf8"
-  )
+fs.readFileSync(
+path.join(__dirname, "deployments", "polygon_latest.json"),
+"utf8"
+)
 );
 
 const cascadeAddress = manifest.contracts.BLEULION_CASCADE.address;
